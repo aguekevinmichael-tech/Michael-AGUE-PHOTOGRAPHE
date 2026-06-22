@@ -389,3 +389,28 @@ nav .menu li a:hover {
     transform: scale(1);
   }
 }
+/* S'assurer que la bannière est derrière le menu */
+.banner {
+  position: relative;
+  z-index: 1; /* bannière en arrière-plan */
+}
+
+/* Le menu doit passer au-dessus */
+.menu {
+  position: relative;
+  z-index: 1000; /* menu au-dessus de la bannière */
+  background-color: rgba(0,0,0,0.9); /* fond sombre pour plus de visibilité */
+  color: #fff; /* texte blanc */
+}
+
+/* Les liens du menu plus visibles */
+.menu li a {
+  display: block;
+  padding: 10px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.menu li a:hover {
+  background-color: #444; /* effet survol */
+}

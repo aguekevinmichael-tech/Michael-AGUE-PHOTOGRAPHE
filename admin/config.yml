@@ -1,0 +1,24 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"   # où seront stockées les images
+public_folder: "/images/uploads"
+
+collections:
+  - name: "pages"
+    label: "Pages du site"
+    files:
+      - file: "index.html"
+        label: "Accueil"
+        name: "accueil"
+        fields:
+          - {label: "Titre principal", name: "title", widget: "string"}
+          - {label: "Texte d’introduction", name: "intro", widget: "text"}
+
+      - file: "contact.html"
+        label: "Contact"
+        name: "contact"
+        fields:
+          - {label: "À propos", name: "about", widget: "text"}
+          - {label: "Coordonnées", name: "info", widget: "text"}
