@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Mon Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Menu identique -->
+  <header>
+    <nav>
+      <div class="logo">Mon Portfolio</div>
+      <div class="burger" onclick="toggleMenu()">☰</div>
+      <ul class="menu">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="sport.html">Sport</a></li>
+        <li><a href="football.html">Football</a></li>
+        <li><a href="spectacle.html">Spectacle</a></li>
+        <li><a href="evenement.html">Évènement</a></li>
+        <li><a href="portrait.html">Portrait</a></li>
+        <li><a href="paysage.html">Paysage</a></li>
+        <li><a href="autre.html">Autre</a></li>
+        <li><a href="contact.html">Nous contacter</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Section Contact -->
+  <section class="contact-page">
+    <!-- Partie gauche -->
+    <div class="contact-left">
+      <!-- À propos -->
+      <div class="about">
+        <h2>À propos</h2>
+        <p>
+          Je suis Michael AGUE, photographe passionné spécialisé dans le sport, les spectacles, 
+          les portraits et les paysages. Mon objectif est de capturer l’authenticité et l’émotion 
+          à travers chaque image.
+        </p>
+      </div>
+
+      <!-- Coordonnées -->
+      <div class="info">
+        <h2>Mes coordonnées</h2>
+        <ul>
+          <li>Email : <a href="mailto:michaelaguepro@gmail.com">michaelaguepro@gmail.com</a></li>
+          <li>Téléphone : +225 00 00 00 00</li>
+          <li>Instagram : @michaelaguephoto</li>
+        </ul>
+      </div>
+
+      <!-- Formulaire -->
+      <div class="contact-form">
+        <h2>Envoyer un message</h2>
+        <form action="mailto:michaelaguepro@gmail.com" method="post" enctype="text/plain">
+          <input type="text" name="nom" placeholder="Votre nom" required>
+          <input type="email" name="email" placeholder="Votre email" required>
+          <textarea name="message" placeholder="Votre message" required></textarea>
+          <button type="submit">Envoyer</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Partie droite : photo -->
+    <div class="contact-right">
+      <img src="images/michael.jpg" alt="Photo de Michael AGUE">
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

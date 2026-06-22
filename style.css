@@ -1,0 +1,391 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: #fff;
+}
+
+/* Menu */
+header {
+  background: #222;
+  padding: 10px 20px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+nav .menu {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+nav .menu li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+nav .menu li a:hover {
+  color: #f39c12;
+}
+
+/* Burger menu */
+.burger {
+  display: none;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    background: #222;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+  }
+  .menu.show {
+    display: flex;
+  }
+  .burger {
+    display: block;
+  }
+}
+
+/* Slider */
+.slider {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  width: 300%;
+  animation: slide 12s infinite;
+}
+
+.slides img {
+  width: 100%;
+  height: 70vh;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  33% { transform: translateX(-100%); }
+  66% { transform: translateX(-200%); }
+  100% { transform: translateX(0); }
+}
+
+/* Vidéo */
+.video {
+  padding: 40px;
+  text-align: center;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+}
+/* Galerie */
+.gallery {
+  padding: 40px;
+  text-align: center;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+/* Bannière */
+.banner {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  background: url("images/banner.jpg") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+}
+
+.banner::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5); /* effet sombre transparent */
+}
+
+.banner-text {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+}
+
+.banner h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.banner p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.banner .btn {
+  background: #f39c12;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.banner .btn:hover {
+  background: #d35400;
+}
+/* Import des polices */
+@font-face {
+  font-family: 'Breilga';
+  src: url('fonts/Breilga.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('fonts/Poppins-ExtraLightItalic.ttf') format('truetype');
+}
+
+/* Bannière */
+.banner {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  background: url("images/banner.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  text-align: left; /* alignement à gauche */
+  padding-left: 50px; /* marge à gauche */
+}
+
+.banner::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+
+.banner-text {
+  position: relative;
+  z-index: 1;
+}
+
+.banner h1 {
+  font-size: 3em;
+  margin: 0;
+}
+
+.banner .name {
+  font-family: 'Breilga', sans-serif;
+  font-weight: normal;
+  margin-right: 15px;
+}
+
+.banner .job {
+  font-family: 'Poppins', sans-serif;
+  font-style: italic;
+  font-weight: 200; /* ExtraLight */
+  font-size: 0.6em; /* plus petit */
+}
+/* À propos */
+.about, .info, .contact-form {
+  padding: 40px;
+  max-width: 800px;
+  margin: auto;
+  color: #fff;
+}
+
+.about p {
+  line-height: 1.6;
+}
+
+/* Coordonnées */
+.info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.info li {
+  margin: 10px 0;
+}
+
+/* Formulaire */
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input, 
+.contact-form textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+}
+
+.contact-form button {
+  background: #f39c12;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact-form button:hover {
+  background: #d35400;
+}/* Mise en page Contact avec photo */
+.contact-page {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
+  color: #fff;
+}
+
+.contact-left {
+  flex: 2;
+  padding-right: 20px;
+}
+
+.contact-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.contact-right img {
+  max-width: 250px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  opacity: 0;
+  transform: scale(0.8);
+  animation: zoomIn 1.5s ease-out forwards;
+  animation-delay: 0.5s; /* petit délai */
+}
+
+/* Animation photo */
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/* Mise en page Contact avec photo */
+.contact-page {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
+  color: #fff;
+}
+
+.contact-left {
+  flex: 2;
+  padding-right: 20px;
+}
+
+.contact-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.contact-right img {
+  max-width: 250px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  opacity: 0;
+  transform: scale(0.8);
+  animation: zoomIn 1.5s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+/* Animation photo */
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

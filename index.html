@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Michael AGUE PHOTOGRAPHE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Menu -->
+  <header>
+    <nav>
+      <div class="logo">Michael AGUE PHOTOGRAPHE</div>
+      <div class="burger" onclick="toggleMenu()">☰</div>
+      <ul class="menu">
+        <li><a href="sport.html">Sport</a></li>
+        <li><a href="football.html">Football</a></li>
+        <li><a href="spectacle.html">Spectacle</a></li>
+        <li><a href="evenement.html">Évènement</a></li>
+        <li><a href="portrait.html">Portrait</a></li>
+        <li><a href="paysage.html">Paysage</a></li>
+        <li><a href="autre.html">Autre</a></li>
+        <li><a href="contact.html">Nous contacter</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- Bannière -->
+<section class="banner">
+  <div class="banner-text">
+    <h1>
+      <span class="name">Michael AGUE</span>
+      <span class="job">PHOTOGRAPHE</span>
+    </h1>
+  </div>
+</section>
+
+
+  <!-- Slider -->
+  <section class="slider">
+    <div class="slides">
+      <img src="images/photo1.jpg" alt="Photo 1" onclick="openLightbox(this.src)">
+      <img src="images/photo2.jpg" alt="Photo 2" onclick="openLightbox(this.src)">
+      <img src="images/photo3.jpg" alt="Photo 3" onclick="openLightbox(this.src)">
+    </div>
+  </section>
+
+  <!-- Vidéo intégrée -->
+  <section class="video">
+    <h2>Présentation vidéo</h2>
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+              frameborder="0" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Agrandissement">
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Football - Mon Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Menu identique -->
+  <header>
+    <nav>
+      <div class="logo">Mon Portfolio</div>
+      <div class="burger" onclick="toggleMenu()">☰</div>
+      <ul class="menu">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="sport.html">Sport</a></li>
+        <li><a href="football.html">Football</a></li>
+        <li><a href="spectacle.html">Spectacle</a></li>
+        <li><a href="evenement.html">Évènement</a></li>
+        <li><a href="portrait.html">Portrait</a></li>
+        <li><a href="paysage.html">Paysage</a></li>
+        <li><a href="autre.html">Autre</a></li>
+        <li><a href="contact.html">Nous contacter</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Galerie Football -->
+  <section class="gallery">
+    <h2>Galerie Football</h2>
+    <div class="gallery-grid">
+      <img src="images/football1.jpg" alt="Football 1" onclick="openLightbox(this.src)">
+      <img src="images/football2.jpg" alt="Football 2" onclick="openLightbox(this.src)">
+      <img src="images/football3.jpg" alt="Football 3" onclick="openLightbox(this.src)">
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Agrandissement">
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
