@@ -5,7 +5,7 @@ body {
   color: #fff;
 }
 
-/* Menu */
+/* ===== Menu ===== */
 header {
   background: #222;
   padding: 10px 20px;
@@ -26,15 +26,22 @@ nav .menu {
   list-style: none;
   display: flex;
   gap: 15px;
+  position: relative;
+  z-index: 1000; /* menu au-dessus de la bannière */
+  background-color: rgba(0,0,0,0.9);
+  color: #fff;
 }
 
 nav .menu li a {
+  display: block;
+  padding: 10px;
   color: #fff;
   text-decoration: none;
   transition: color 0.3s;
 }
 
 nav .menu li a:hover {
+  background-color: #444;
   color: #f39c12;
 }
 
@@ -49,7 +56,6 @@ nav .menu li a:hover {
   .menu {
     display: none;
     flex-direction: column;
-    background: #222;
     position: absolute;
     top: 60px;
     right: 0;
@@ -63,7 +69,7 @@ nav .menu li a:hover {
   }
 }
 
-/* Slider */
+/* ===== Slider ===== */
 .slider {
   position: relative;
   width: 100%;
@@ -91,7 +97,7 @@ nav .menu li a:hover {
   100% { transform: translateX(0); }
 }
 
-/* Vidéo */
+/* ===== Vidéo ===== */
 .video {
   padding: 40px;
   text-align: center;
@@ -109,7 +115,7 @@ nav .menu li a:hover {
   width: 100%; height: 100%;
 }
 
-/* Lightbox */
+/* ===== Lightbox ===== */
 .lightbox {
   display: none;
   position: fixed;
@@ -124,7 +130,8 @@ nav .menu li a:hover {
   max-width: 90%;
   max-height: 90%;
 }
-/* Galerie */
+
+/* ===== Galerie ===== */
 .gallery {
   padding: 40px;
   text-align: center;
@@ -147,68 +154,8 @@ nav .menu li a:hover {
 .gallery-grid img:hover {
   transform: scale(1.05);
 }
-/* Bannière */
-.banner {
-  position: relative;
-  width: 100%;
-  height: 60vh;
-  background: url("images/banner.jpg") center/cover no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  text-align: center;
-}
 
-.banner::after {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.5); /* effet sombre transparent */
-}
-
-.banner-text {
-  position: relative;
-  z-index: 1;
-  max-width: 600px;
-}
-
-.banner h1 {
-  font-size: 3em;
-  margin-bottom: 10px;
-}
-
-.banner p {
-  font-size: 1.2em;
-  margin-bottom: 20px;
-}
-
-.banner .btn {
-  background: #f39c12;
-  color: #fff;
-  padding: 10px 20px;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 5px;
-  transition: background 0.3s;
-}
-
-.banner .btn:hover {
-  background: #d35400;
-}
-/* Import des polices */
-@font-face {
-  font-family: 'Breilga';
-  src: url('fonts/Breilga.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Poppins';
-  src: url('fonts/Poppins-ExtraLightItalic.ttf') format('truetype');
-}
-
-/* Bannière */
+/* ===== Bannière ===== */
 .banner {
   position: relative;
   width: 100%;
@@ -217,8 +164,9 @@ nav .menu li a:hover {
   display: flex;
   align-items: center;
   color: #fff;
-  text-align: left; /* alignement à gauche */
-  padding-left: 50px; /* marge à gauche */
+  text-align: left;
+  padding-left: 50px;
+  z-index: 1; /* derrière le menu */
 }
 
 .banner::after {
@@ -241,17 +189,28 @@ nav .menu li a:hover {
 
 .banner .name {
   font-family: 'Breilga', sans-serif;
-  font-weight: normal;
   margin-right: 15px;
 }
 
 .banner .job {
   font-family: 'Poppins', sans-serif;
   font-style: italic;
-  font-weight: 200; /* ExtraLight */
-  font-size: 0.6em; /* plus petit */
+  font-weight: 200;
+  font-size: 0.6em;
 }
-/* À propos */
+
+/* ===== Polices ===== */
+@font-face {
+  font-family: 'Breilga';
+  src: url('fonts/Breilga.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('fonts/Poppins-ExtraLightItalic.ttf') format('truetype');
+}
+
+/* ===== Contact ===== */
 .about, .info, .contact-form {
   padding: 40px;
   max-width: 800px;
@@ -263,7 +222,6 @@ nav .menu li a:hover {
   line-height: 1.6;
 }
 
-/* Coordonnées */
 .info ul {
   list-style: none;
   padding: 0;
@@ -273,7 +231,6 @@ nav .menu li a:hover {
   margin: 10px 0;
 }
 
-/* Formulaire */
 .contact-form form {
   display: flex;
   flex-direction: column;
@@ -301,51 +258,8 @@ nav .menu li a:hover {
 
 .contact-form button:hover {
   background: #d35400;
-}/* Mise en page Contact avec photo */
-.contact-page {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 40px;
-  max-width: 1200px;
-  margin: auto;
-  color: #fff;
 }
 
-.contact-left {
-  flex: 2;
-  padding-right: 20px;
-}
-
-.contact-right {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-.contact-right img {
-  max-width: 250px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
-  opacity: 0;
-  transform: scale(0.8);
-  animation: zoomIn 1.5s ease-out forwards;
-  animation-delay: 0.5s; /* petit délai */
-}
-
-/* Animation photo */
-@keyframes zoomIn {
-  from {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-/* Mise en page Contact avec photo */
 .contact-page {
   display: flex;
   justify-content: space-between;
@@ -378,39 +292,7 @@ nav .menu li a:hover {
   animation-delay: 0.5s;
 }
 
-/* Animation photo */
 @keyframes zoomIn {
-  from {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-/* S'assurer que la bannière est derrière le menu */
-.banner {
-  position: relative;
-  z-index: 1; /* bannière en arrière-plan */
-}
-
-/* Le menu doit passer au-dessus */
-.menu {
-  position: relative;
-  z-index: 1000; /* menu au-dessus de la bannière */
-  background-color: rgba(0,0,0,0.9); /* fond sombre pour plus de visibilité */
-  color: #fff; /* texte blanc */
-}
-
-/* Les liens du menu plus visibles */
-.menu li a {
-  display: block;
-  padding: 10px;
-  color: #fff;
-  text-decoration: none;
-}
-
-.menu li a:hover {
-  background-color: #444; /* effet survol */
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
 }
